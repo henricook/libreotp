@@ -1,0 +1,65 @@
+name: Build and Release Flutter Desktop Apps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Enable desktop platforms
+        run: |
+          flutter config --enable-macos-desktop
+          flutter config --enable-windows-desktop
+          flutter config --enable-linux-desktop
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build for macOS
+        if: matrix.os == 'macos-latest'
+        run: flutter build macos --release
+
+      - name: Build for Windows
+        if: matrix.os == 'windows-latest'
+        run: flutter build windows --release
+
+      - name: Build for Linux
+        if: matrix.os == 'ubuntu-latest'
+        run: flutter build linux --release
+
+      - name: Upload macOS build artifacts
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v2
+        with:
+          name: macos-release
+          path: build/macos/Build/Products/Release/
+
+      - name: Upload Windows build artifacts
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows-release
+          path: build/windows/runner/Release/
+
+      - name: Upload Linux build artifacts
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux-release
+          path: build/linux/release/
