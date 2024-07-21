@@ -1,4 +1,6 @@
-# Libre OTP
+# LibreOTP
+
+LibreOTP is a cross-platform desktop OTP code generator. Currently it works exclusively with an exported JSON file from [2FAS](https://2fas.com/). It supports Windows, Mac and Linux and 2FAS features like grouping. Currently only TOTP keys are supported.
 
 This project was borne from necessity. I needed a modern desktop application that would support 2FAS exports including grouping and search on Linux. It's rough, it's ready, but it does exactly what I needed it to do and might be what you need to!
 
