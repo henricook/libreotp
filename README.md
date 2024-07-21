@@ -14,7 +14,15 @@ Contributions and improvements are welcome, open an `RFC: ` issue if you'd like 
    - Windows: `C:\Users\<Username>\Documents\LibreOTP\data.json`
    - MacOS: `/Users/<Username>/Documents/LibreOTP/data.json`
    - Linux: `/home/<Username>/Documents`
-3. Download the appropriate binary for your OS from the [Releases page]()
+3. Download the appropriate binary for your OS from the [Releases page](https://github.com/henricook/libreotp/releases)
+4. Unpack the zip, it's rough and ready right now but there'll be a folder called 'bundle' in there that you can switch to. On Linux to run the app you'd now do:
+   - `chmod +x ./LibreOTP`
+   - `./LibreOTP`
+5. Enjoy! And don't forget to :star: Star the repository to encourage further updates. 
+
+## Limitations
+- If `data.json` isn't in the right place, or its malformed, the crash will be quick and unhandled.
+- There's not really much error handling at all.
 
 ## Credit
 

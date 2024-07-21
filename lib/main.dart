@@ -34,7 +34,7 @@ class Dashboard extends StatefulWidget {
   final Map<String, dynamic> jsonData;
   final bool demoMode;
 
-  const Dashboard({super.key, required this.jsonData, this.demoMode = true});
+  const Dashboard({super.key, required this.jsonData, this.demoMode = false});
 
   @override
   _DashboardState createState() => _DashboardState();
