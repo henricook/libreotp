@@ -41,3 +41,5 @@ The Flutter docs are great and along with IntelliJ's starter project meant I got
 
 1. Supported encrypted dumps so that I don't need to leave my secrets unencrypted on disk
 2. (Big one) Sync with Google Drive
+3. Better installers
+4. Automated release pipeline with tagging and asset generation
