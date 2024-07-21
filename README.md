@@ -6,6 +6,9 @@ Flutter means this app works on Windows, Mac and Linux.
 
 Contributions and improvements are welcome, open an `RFC: ` issue if you'd like to discuss a plan before getting started.
 
+## Preview
+![Demo](https://github.com/user-attachments/assets/50da63f7-44af-472d-853c-1fdb60892a5e)
+
 ## Getting Started
 
 1. Generate an unencrypted export from your 2FAS app and download it to your desktop machine, call it `data.json`. 
