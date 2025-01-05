@@ -17,7 +17,7 @@ Contributions and improvements are welcome, open an `RFC: ` issue if you'd like 
    - :bulb: Improvement opportunity: Support encrypted exports
 2. Put this file in a folder called 'LibreOTP' in your system documents directory. This is the hard coded location where the app will search for it e.g. on my linux system that's `/home/henri/Documents/LibreOTP/data.json`. On other platforms the document directory is:
    - Windows: `C:\Users\<Username>\Documents\LibreOTP\data.json`
-   - MacOS: `/Users/<Username>/Documents/LibreOTP/data.json`
+   - MacOS: `/Users/<Username>/Library/Containers/com.henricook.libreotp/Data/Documents/LibreOTP/data.json` (sorry, MacOS Sandboxing requirements make this ugly. You'll need to create this path.)
    - Linux: `/home/<Username>/Documents`
 3. Download the appropriate binary for your OS from the [Releases page](https://github.com/henricook/libreotp/releases)
 4. Unpack the zip, it's rough and ready right now but there'll be a folder called 'bundle' in there that you can switch to. On Linux to run the app you'd now do:

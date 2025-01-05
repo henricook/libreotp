@@ -15,7 +15,7 @@ Future<String> get _localPath async {
 
 Future<File> get _localFile async {
   final path = await _localPath;
-  debugPrint('Path = ' + path);
+  debugPrint('Application Data Directory: ' + path);
   return File('$path/data.json');
 }
 
