@@ -87,7 +87,7 @@ class _DashboardState extends State<Dashboard> {
 
   Map<String, List<Map<String, dynamic>>> _groupByGroupId(Map<String, dynamic> jsonData) {
     List<Map<String, dynamic>> services = List<Map<String, dynamic>>.from(jsonData['services']);
-    List<Map<String, dynamic>> groups = List<Map<String, dynamic>>.from(jsonData['groups']);
+    List<Map<String, dynamic>> groups = List<Map<String, dynamic>>.from(jsonData['groups'] ?? []);
 
     Map<String, List<Map<String, dynamic>>> groupedData = {};
 
@@ -105,7 +105,7 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Map<String, String> _getGroupNames(Map<String, dynamic> jsonData) {
-    List<Map<String, dynamic>> groups = List<Map<String, dynamic>>.from(jsonData['groups']);
+    List<Map<String, dynamic>> groups = List<Map<String, dynamic>>.from(jsonData['groups'] ?? []);
 
     Map<String, String> groupNames = {};
 
