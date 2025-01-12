@@ -19,15 +19,23 @@ Contributions and improvements are welcome, open an `RFC: ` issue if you'd like 
    - Windows: `C:\Users\<Username>\Documents\LibreOTP\data.json`
    - MacOS: `/Users/<Username>/Library/Containers/com.henricook.libreotp/Data/Documents/LibreOTP/data.json` (sorry, MacOS Sandboxing requirements make this ugly. You'll need to create this path.)
    - Linux: `/home/<Username>/Documents`
-3. Download the appropriate binary for your OS from the [Releases page](https://github.com/henricook/libreotp/releases)
-4. Unpack the zip, it's rough and ready right now but there'll be a folder called 'bundle' in there that you can switch to. On Linux to run the app you'd now do:
-   - `chmod +x ./LibreOTP`
-   - `./LibreOTP`
+3. Download the appropriate binary/package for your OS from the [Releases page](https://github.com/henricook/libreotp/releases)
+   - For source releases: If needed, unpack the zip, it's rough and ready right now but there'll be a folder called 'bundle' in there that you can switch to. On Linux to run the app you'd now do:
+      - `chmod +x ./LibreOTP`
+      - `./LibreOTP`
+   - For the deb: `dpkg -i libreotp_VERSION.deb`, a desktop entry should appear in your launcher
 5. Enjoy! And don't forget to :star: Star the repository to encourage further updates. 
 
 ## Limitations
 - If `data.json` isn't in the right place, or its malformed, the crash will be quick and unhandled.
 - There's not really much error handling at all.
+
+## Building Deb Packages
+1. Run `flutter build linux`
+2. Move the contents of `build/linux/x64/release/bundle` to `deb/libreotp_VERSION/opt/libreotp/`
+3. cd to deb/
+4. Run `dpkg-deb --build libreotp_VERSION`, the deb appears in the same directory.
+5. Install with `sudo dpkg -i libreotp_VERSION.deb`
 
 ## Credit
 

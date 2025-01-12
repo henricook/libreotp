@@ -1,0 +1,7 @@
+Package: libreotp
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Henri Cook <libreotp@henripub>
+Description: LibreOTP - A Desktop App for 2FAS
